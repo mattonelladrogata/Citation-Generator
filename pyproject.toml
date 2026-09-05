@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citation-gen"
+version = "0.1.0"
+description = "Generate a valid, officially-verified CITATION.cff directly from an existing pyproject.toml — thirty seconds, not a form to fill in from scratch."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Jacopo Antonelli Drago" }]
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6.0", "cffconvert>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["citation_gen*"]
+
+[tool.setuptools.package-data]
+citation_gen = ["cff_schema_1_2_0.json"]
